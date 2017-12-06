@@ -5,7 +5,7 @@ using UnityEngine;
 public class PersoMovement : MonoBehaviour {
 
 	[SerializeField]
-	float speed = 5f;
+	float speed = 1f;
 
 	// public Rect bounds;
 

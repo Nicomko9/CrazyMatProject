@@ -47,17 +47,18 @@ public class BigMap : MonoBehaviour {
 	void CreateMiniMaps() {
 		miniMaps = new MiniMap[nbMaps];
 		float posX;
-		float posY = transform.position.y;
+		float posY = transform.position.y - 10;
 		float posZ = transform.position.z;
 		for (int i = 0; i < rows; i++) {
-			posX = transform.position.x;
-			posZ += 10;
+			posX = transform.position.x + 10;
+			posY += 10;
 			for (int j = 0; j < columns; j++) {
-				miniMap = Instantiate (miniMap, new Vector3 (posX, posY, posZ), Quaternion.identity);
+				miniMap = Instantiate (miniMap, new Vector3 (posX, posY), transform.rotation);
 				miniMaps [i] = miniMap.GetComponent<MiniMap> ();
 				miniMaps [i].xPos = posX;
 				miniMaps [i].yPos = posY;
-				posX -= 10;
+				// transform.rotation = new Quaternion (-90, 0, 0, 0);
+				posX += 10;
 			}
 		}
 	}
@@ -66,10 +67,10 @@ public class BigMap : MonoBehaviour {
 		for (int i = 0; i < miniMaps.Length; i++) {
 			currentMap = miniMaps [i];
 			// Initialize its width
-			for (int j = 0; j < rows; j++) {
+			for (int j = 0; j < columns; j++) {
 				float coordX = currentMap.xPos + j;
 				// Initialize its height
-				for (int k = 0; k < columns; k++) {
+				for (int k = 0; k < rows; k++) {
 					float coordY = currentMap.yPos + k;
 					grid [(int)coordX, (int)coordY] = miniMaps [i];
 				}

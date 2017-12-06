@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectToPickUp : MonoBehaviour {
 
-	public enum Type {
+	/*public enum Type {
 		POTION, SCRAP, GEAR, METAL
 	}
 
@@ -54,6 +54,6 @@ public class ObjectToPickUp : MonoBehaviour {
 			SpawnObject ();
 			yield return new WaitForSeconds (0.1f);
 		}
-	}
+	}*/
 	
 }
