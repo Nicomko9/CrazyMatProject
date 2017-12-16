@@ -6,7 +6,7 @@ using System;
 public class EnemySpawner : MonoBehaviour {
 
 	public LootEnemy.TypeEnemy typeEnemy;
-	public LootEnemy lootEnemy = new LootEnemy();
+	public LootEnemy lootEnemy;
 	// public bool boss;
 
 	public static int maxEnemies = 25;
@@ -53,16 +53,14 @@ public class EnemySpawner : MonoBehaviour {
 
 		if (!Physics2D.OverlapCircle (position, minSpawnDistance, layerMask)) {
 			this.typeEnemy = lootEnemy.Choose ();
-			Debug.Log ("Type Enemy : " + this.typeEnemy.ToString ());
+			// Debug.Log ("Type Enemy : " + this.typeEnemy.ToString ());
 
 			GameObject obj = enemyPrefabs[(int)this.typeEnemy].GetInstance ();
-			Debug.Log ("Tout va bien");
 			obj.transform.position = position;
 			obj.transform.rotation = transform.rotation;
 
-
 			nbEnemiesSpawned++;
-			Debug.Log (nbEnemiesSpawned);
+			Debug.Log (nbEnemiesSpawned + " enemies spawned !");
 		}
 	}
 

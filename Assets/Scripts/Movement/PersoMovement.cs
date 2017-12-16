@@ -27,10 +27,9 @@ public class PersoMovement : MonoBehaviour {
 		Vector3 velocity = GetAxisVector ();
 		velocity *= speed * Time.deltaTime;
 		// transform.position += velocity;
-
 		transform.Translate (velocity);
 		// ClampPosition ();
-		Debug.Log ("X : " + transform.position.x + ", Y :" + transform.position.y);
+		// Debug.Log ("X : " + transform.position.x + ", Y :" + transform.position.y);
 	}
 
 	Vector3 GetAxisVector() {

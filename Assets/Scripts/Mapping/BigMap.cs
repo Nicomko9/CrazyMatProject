@@ -48,7 +48,7 @@ public class BigMap : MonoBehaviour {
 		miniMaps = new MiniMap[nbMaps];
 		float posX;
 		float posY = transform.position.y - 10;
-		float posZ = transform.position.z;
+		// float posZ = transform.position.z;
 		for (int i = 0; i < rows; i++) {
 			posX = transform.position.x + 10;
 			posY += 10;

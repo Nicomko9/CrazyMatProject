@@ -11,7 +11,7 @@ public class Village : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		BigMap bigMap = map.GetComponent<BigMap> ();
+		// BigMap bigMap = map.GetComponent<BigMap> ();
 		Debug.Log ("New Big Map !");
 	}
 	
